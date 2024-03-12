@@ -1,2 +1,4 @@
 # PIC18F_codes
- MICRO - codes to PIC18F452
+ MICRO - codes developed to PIC18F452
+
+ Prof. Rodrigo Rimoldi de Lima
