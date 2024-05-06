@@ -20,36 +20,42 @@ void Inicializa_ADC() {
         // 110 = Fosc/64
         // 111 = O clock deriva do oscilador interno
 
-    // Bits de selecao dos canais de conversao A/D
-    ADCON0bits.CHS2 = 0;
-    ADCON0bits.CHS1 = 0;
-    ADCON0bits.CHS0 = 0;
-        // 000 = AN0 (pino 2)
-        // 001 = AN1 (pino 3)
-        // 010 = AN2 (pino 4)
-        // 011 = AN3 (pino 5)
-        // 100 = AN4 (pino 7)
-        // 101 = AN5 (pino 8)
-        // 110 = AN6 (pino 9)
-        // 111 = AN7 (pino 10)
-
     // Bit de selecao do formato do resultado da conversao A/D
     ADCON1bits.ADFM = 0;
         // 1 = Justificado a direita
         // 0 = Justificado a esquerda
 
-    // Bit de controle sobre a configuracao das portas A/D
-    ADCON1bits.PCFG3 = 1;
-    ADCON1bits.PCFG2 = 1;
-    ADCON1bits.PCFG1 = 1;
-    ADCON1bits.PCFG0 = 0;
-        // Somente AN0 como entrada analagica
-        // Vref+ = Vdd e Vref- = Vss
 
     // Bit de habilitacao da conversao A/D
     ADCON0bits.ADON = 1;
         // 1 = conversao A/D ligada
         // 0 = conversao A/D desligada    
+}
+
+// SUBROTINA DE SELECAO DO CANAL (PINO) PARA REALIZAR A CONVERSAO A/D
+void Canal_ADC(unsigned int c2, unsigned int c1, unsigned int c0){
+
+// Bits de selecao dos canais de conversao A/D
+    ADCON0bits.CHS2 = c2;
+    ADCON0bits.CHS1 = c1;
+    ADCON0bits.CHS0 = c0;
+        // Canal_ADC(0, 0, 0) = AN0 (pino 2)
+        // Canal_ADC(0, 0, 1) = AN1 (pino 3)
+        // Canal_ADC(0, 1, 0) = AN2 (pino 4)
+        // Canal_ADC(0, 1, 1) = AN3 (pino 5)
+        // Canal_ADC(1, 0, 0) = AN4 (pino 7)
+        // Canal_ADC(1, 0, 1) = AN5 (pino 8)
+        // Canal_ADC(1, 1, 0) = AN6 (pino 9)
+        // Canal_ADC(1, 1, 1) = AN7 (pino 10)
+}
+
+void Portas_ANx(unsigned int p3, unsigned int p2, unsigned int p1,
+        unsigned int p0){
+        // Bit de controle sobre a configuracao das portas A/D
+    ADCON1bits.PCFG3 = p3;
+    ADCON1bits.PCFG2 = p2;
+    ADCON1bits.PCFG1 = p1;
+    ADCON1bits.PCFG0 = p0;
 }
 
 // SUBROTINA DE RETORNO DO RESULTADO DA CONVERSAO A/D
