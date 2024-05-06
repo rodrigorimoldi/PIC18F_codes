@@ -29,7 +29,9 @@ void main(void) {
     __delay_ms(2000);
     Limpa_display_LCD();
 
-    inicializa_ADC();
+    Inicializa_ADC();
+    Canal_ADC(0, 0, 0);
+    Portas_ANx(0, 1, 0, 0);
 
     do {
 
