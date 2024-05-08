@@ -7,8 +7,8 @@
 
 #include "PIC18F_config.h"
 
-#define timer1  840
-#define timer2  40
+#define timer1  820
+#define timer2  30
 #define pinD3   PORTCbits.RC0
 #define pinD2   PORTCbits.RC1
 #define pinD1   PORTCbits.RC2
@@ -179,91 +179,91 @@ void main(void) {
         
         display_7seg1();
         numero_4();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg2();
         numero_4();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg3();
         numero_4();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg4();
         numero_4();
-        __delay_ms(250);
+        __delay_ms(timer2);
         segDP = !segDP;
         __delay_ms(timer1);
         
         display_7seg1();
         numero_5();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg2();
         numero_5();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg3();
         numero_5();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg4();
         numero_5();
-        __delay_ms(250);
+        __delay_ms(timer2);
         segDP = !segDP;
         __delay_ms(timer1);
         
         display_7seg1();
         numero_6();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg2();
         numero_6();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg3();
         numero_6();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg4();
         numero_6();
-        __delay_ms(250);
+        __delay_ms(timer2);
         segDP = !segDP;
         __delay_ms(timer1);
         
         display_7seg1();
         numero_7();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg2();
         numero_7();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg3();
         numero_7();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg4();
         numero_7();
-        __delay_ms(250);
+        __delay_ms(timer2);
         segDP = !segDP;
         __delay_ms(timer1);
         
         display_7seg1();
         numero_8();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg2();
         numero_8();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg3();
         numero_8();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg4();
         numero_8();
-        __delay_ms(250);
+        __delay_ms(timer2);
         segDP = !segDP;
         __delay_ms(timer1);
         
         display_7seg1();
         numero_9();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg2();
         numero_9();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg3();
         numero_9();
-        __delay_ms(250);
+        __delay_ms(timer2);
         display_7seg4();
         numero_9();
-        __delay_ms(250);
+        __delay_ms(timer2);
         segDP = !segDP;
         __delay_ms(timer1);
     }
